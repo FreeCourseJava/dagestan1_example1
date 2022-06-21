@@ -1,23 +1,28 @@
+
 public class week2_third {
     public static void main(String[] args) {
-        int balance = 2147483647;
+        int balance = 2147483646;
         int increase = 1;
         int TotalScore = NewBalance(balance, increase);
         System.out.println(TotalScore);
     }
 
     public static int NewBalance(int balance, int increase) {
-        int sum;
-        sum = balance + increase;
-        if (balance + increase >= 0) {
-            return sum;
-        } if (balance >= 0 && increase >= 0) {
+        int summa;
+        long sum;
+        long balanceL;
+        long increaseL;
+        balanceL = (long) balance;
+        increaseL = (long) increase;
+        sum = balanceL + increaseL;
+        if (sum > Integer.MAX_VALUE) {
             return 0;
-        } else if (balance + increase >= -2147483647) {
-                return sum;
+        } else if (sum < Integer.MIN_VALUE) {
+            return 0;
         } else {
-            return 0;
+            summa = (int) sum;
+            ;
+            return summa;
         }
     }
 }
-
