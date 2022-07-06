@@ -2,7 +2,7 @@ package week3;
 
 import java.util.Arrays;
 
-public class week3_first {
+public class first {
     public static void main(String[] args) {
         int count = 0;
         int[] arr = new int[6];
