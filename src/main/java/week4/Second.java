@@ -1,13 +1,13 @@
 package week4;
 
-public class second {
+public class Second {
     public static void main(String[] args) {
         int[] date = {1920, 1438, 1240, 1990, 1796, 1680, 1438, +
                 1552, 1796, 2015, 1708, 1236, 1725, 1723, 1759, 1805, 1918, 1952, 1937, 2012};
         int[] dateSorted = bubbleSort(date);
-        int low =0;
-        int hight = date.length-1;
-        System.out.println(binarySearch((dateSorted), 1937, low, hight));
+        int left =0;
+        int right = date.length-1;
+        System.out.println(binarySearch(dateSorted, 1937, left, right));
     }
 
     private static int[] bubbleSort(int[] date) {
@@ -24,17 +24,17 @@ public class second {
         return newArray;
     }
 
-    public static int binarySearch(int[] date, int example, int low, int hight) {
-        if (low <= hight) {
-            int middle = low + (hight - low) / 2;
+    public static int binarySearch(int[] date, int example, int left, int right) {
+        if (left <= right) {
+            int middle = left + (right - left) / 2;
             if (date[middle] > example) {
-                return binarySearch(date, example, low, middle - 1);
+                return binarySearch(date, example, left, middle - 1);
             } else if (date[middle] < example) {
-                return binarySearch(date, example, middle + 1, hight);
+                return binarySearch(date, example, middle + 1, right);
             } else {
                 return middle;
             }
         }
-        return -1;
+        return 1;
     }
 }

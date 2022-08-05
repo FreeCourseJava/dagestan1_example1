@@ -2,15 +2,15 @@ package week4;
 
 import java.util.Arrays;
 
-public class first {
+public class First {
     public static void main(String[] args) {
         int[] array1 = {5, 6, 1, 3, 9, 4, 2};
-        int left = 0;
-        int right = array1.length- 1;
-        int[] newArray = cocktailSort(array1, left, right);
+        int[] newArray = cocktailSort(array1);
         System.out.println(Arrays.toString(newArray));
     }
-    public static int[] cocktailSort (int[] array, int left, int right) {
+    public static int[] cocktailSort (int[] array) {
+        int left = 0;
+        int right = array.length- 1;
         do {
             for (int i = left; i < right; i++) {
                 if (array[i] > array[i + 1]) {
